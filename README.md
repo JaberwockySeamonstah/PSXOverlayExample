@@ -17,18 +17,18 @@ This example is designed to use VSCode and the WSL system. However, the example 
     Get grumpycoders [pcsx-redux](https://github.com/grumpycoders/pcsx-redux)
 
 5. Get the converted PSY-Q libraries
-    The converted files can be obtained [here)(http://psx.arthus.net/sdk/Psy-Q/). Those files should be placed in the pcsx-redux folder under "pcsx-redux\src\mips\psyq\lib" for easier use
+    The converted files can be obtained [here](http://psx.arthus.net/sdk/Psy-Q/). Those files should be placed in the pcsx-redux folder under "pcsx-redux\src\mips\psyq\lib" for easier use
 
 ## Setup
 Copy the "pcsx-redux" folder of this repo to your pcsx-redux folder, this should replace *NO* file but add a new common makefile.
 
-2. Adjust Makefile
+1. Adjust Makefile
     Make sure the "PSX_REDUX" value of the Makefile points to your "pcsx-redux" folder
 
-3. Adjust tasks.json *OPTIONAL*
+2. Adjust tasks.json *OPTIONAL*
     The "finalize" command of the tasks.json requires a valid path to your mkpsxiso
 
-4. Adjust OverlayExample.xml *OPTIONAL*
+3. Adjust OverlayExample.xml *OPTIONAL*
     Make sure the path to the license file in OverlayExample.xml under the config foulder is correct or remove this entry
 
 ## Build the example
