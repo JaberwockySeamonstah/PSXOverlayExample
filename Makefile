@@ -3,7 +3,7 @@ TARGET      = OverlayExample
 TYPE        = ps-exe
 BUILD       = Release
 
-LDSCRIPT       = overlay.ld
+LDSCRIPT2      = overlay.ld
 OVERLAYSECTION = .ovly0 .ovly1
 
 SRCS  = main.cpp
