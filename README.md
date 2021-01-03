@@ -1,6 +1,11 @@
 # Example for using Overlays on the PSX without the "PSY-Q toolchain"
 This example hopefully gives an example on how to use Overlays without using the toolchain provided by the PSY-Q.
 
+## What is an overlay
+Overlays allow you to write code, that is part of your application, but will not be part of the executable. Instead, each overlay land in their own file and can be loaded at runtime, allowing you to actually use the overlay.
+
+Overlays have a predefined address, where they are loaded too. Multiple overlays can have the same loading address, allowing to reduce the size of the main executable and providing a form of dynamic loading.
+
 ## Requirements
 This example is designed to use VSCode and the WSL system. However, the example in general only relies on the GNU GCC for MIPS. 
 
