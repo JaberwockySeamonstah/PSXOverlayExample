@@ -67,6 +67,21 @@ SECTIONS {
 			. = ALIGN(4);
 			__ovly0_end = .;			
 		}
+
+        .ovly1
+        {
+			KEEP(SchwimmflugelOverlay/*.o(.text))
+			__ovly1_ctor = .;
+			KEEP(SchwimmflugelOverlay/*.o(.text.startup._GLOBAL__*))
+			KEEP(SchwimmflugelOverlay/*.o(.text.*))
+			KEEP(SchwimmflugelOverlay/*.o(.rodata*))
+			KEEP(SchwimmflugelOverlay/*.o(.data*))
+			KEEP(SchwimmflugelOverlay/*.o(.bss*))
+			KEEP(SchwimmflugelOverlay/*.o(.ctors))
+			
+			. = ALIGN(4);
+			__ovly1_end = .;			
+		}
 	}
 
     .PSX_EXE_Header : {
@@ -200,7 +215,7 @@ SECTIONS {
     . = ALIGN(4);
     __bss_end = .;
 
-    __heap_start = __ovly0_end;
+    __heap_start = MAX(__ovly0_end, __ovly1_end);
 	
 	. = ADDR(.text) - 0x800;
     __end = .;

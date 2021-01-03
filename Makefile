@@ -4,10 +4,11 @@ TYPE      = ps-exe
 BUILD     = Release
 
 LDSCRIPT       = overlay.ld
-OVERLAYSCETION = .ovly0
+OVERLAYSCETION = .ovly0 .ovly1
 
 SRCS  = main.cpp
 SRCS += PlanschbeckenOverlay/Planschbecken.cpp
+SRCS += SchwimmflugelOverlay/Schwimmflugel.cpp
 SRCS += $(PSX_REDUX)/common/crt0/crt0.s 
 
 CPPFLAGS += -I$(PSX_REDUX)/psyq/include

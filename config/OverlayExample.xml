@@ -15,6 +15,7 @@
 			<file name="system.cnf"	  type="data"	source="config/OverlayExample.cnf"/>
 			<file name="SCES_003.90"  type="data"	source="bin/OverlayExample.ps-exe"/>
 			<file name="PLANSCH.bin"  type="data"   source="bin/Overlay.ovly0" />
+			<file name="SCHWIMM.bin"  type="data"   source="bin/Overlay.ovly1" />
 			<dummy sectors="1024"/>	
 		</directory_tree>
 	</track>
