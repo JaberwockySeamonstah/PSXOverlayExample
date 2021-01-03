@@ -4,7 +4,7 @@ TYPE        = ps-exe
 BUILD       = Release
 
 LDSCRIPT       = overlay.ld
-OVERLAYSCETION = .ovly0 .ovly1
+OVERLAYSECTION = .ovly0 .ovly1
 
 SRCS  = main.cpp
 SRCS += PlanschbeckenOverlay/Planschbecken.cpp

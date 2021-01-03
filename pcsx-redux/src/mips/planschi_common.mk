@@ -38,8 +38,8 @@ OBJS += $(addsuffix .o, $(basename $(SRCS)))
 
 all: dep bin/$(TARGET).$(TYPE)
 bin/$(TARGET).$(TYPE): bin/$(TARGET).elf
-	$(PREFIX)-objcopy $(addprefix -R , $(OVERLAYSCETION)) -O binary $< $@
-	$(foreach ovl, $(OVERLAYSCETION), $(PREFIX)-objcopy -j $(ovl) -O binary $< bin/Overlay$(ovl);)
+	$(PREFIX)-objcopy $(addprefix -R , $(OVERLAYSECTION)) -O binary $< $@
+	$(foreach ovl, $(OVERLAYSECTION), $(PREFIX)-objcopy -j $(ovl) -O binary $< bin/Overlay$(ovl);)
 
 bin/$(TARGET).elf: $(OBJS)
 	$(CC) -g -o bin/$(TARGET).elf $(OBJS) $(LDFLAGS)
