@@ -6,6 +6,11 @@ Overlays allow you to write code, that is part of your application, but will not
 
 Overlays have a predefined address, where they are loaded too. Multiple overlays can have the same loading address, allowing to reduce the size of the main executable and providing a form of dynamic loading.
 
+### Overlays in this example
+For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles make sure to strip them out of the final executable.
+
+The overlays occupy the same address, so you can never load them both at the same time. Therefor, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+
 ## Requirements
 This example is designed to use VSCode and the WSL system. However, the example in general only relies on the GNU GCC for MIPS. 
 
