@@ -8,6 +8,12 @@ CXX = $(PREFIX)-gcc
 
 TYPE ?= cpe
 LDSCRIPT ?= $(ROOTDIR)/$(TYPE).ld
+ifneq ($(strip $(LDSCRIPT2)),)
+LDSCRIPT := $(addprefix $(LDSCRIPT2) , -T$(LDSCRIPT))
+else
+LDSCRIPT := $(addprefix $(ROOTDIR)/default.ld , -T$(LDSCRIPT))
+endif
+
 USE_FUNCTION_SECTIONS ?= true
 
 ARCHFLAGS = -march=mips1 -mabi=32 -EL -fno-pic -mno-shared -mno-abicalls -mfp32
