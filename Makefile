@@ -1,7 +1,7 @@
-PSX_REDUX = ../../../pcsx-redux/src/mips
-TARGET    = OverlayExample
-TYPE      = ps-exe
-BUILD     = Release
+PCSX_REDUX ?= ../../../pcsx-redux/src/mips
+TARGET      = OverlayExample
+TYPE        = ps-exe
+BUILD       = Release
 
 LDSCRIPT       = overlay.ld
 OVERLAYSCETION = .ovly0 .ovly1
@@ -9,11 +9,11 @@ OVERLAYSCETION = .ovly0 .ovly1
 SRCS  = main.cpp
 SRCS += PlanschbeckenOverlay/Planschbecken.cpp
 SRCS += SchwimmflugelOverlay/Schwimmflugel.cpp
-SRCS += $(PSX_REDUX)/common/crt0/crt0.s 
+SRCS += $(PCSX_REDUX)/common/crt0/crt0.s 
 
-CPPFLAGS += -I$(PSX_REDUX)/psyq/include
+CPPFLAGS += -I$(PCSX_REDUX)/psyq/include
 
-LDFLAGS += -L$(PSX_REDUX)/psyq/lib
+LDFLAGS += -L$(PCSX_REDUX)/psyq/lib
 LDFLAGS += -Wl,--start-group
 LDFLAGS += -lapi
 LDFLAGS += -lc
@@ -39,4 +39,4 @@ LDFLAGS += -ltap
 LDFLAGS += -lcd
 LDFLAGS += -Wl,--end-group
 
-include $(PSX_REDUX)/planschi_common.mk
+include $(PCSX_REDUX)/planschi_common.mk
