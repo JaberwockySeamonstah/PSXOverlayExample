@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "label": "Planschi",
+    "command": "bash",
+    "tasks": [
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "wsl make clean"
+        },
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "wsl make"
+        },
+        {
+            "label": "finalize",
+            "type": "shell",
+            "command": "D:\\PSX\\Tools\\mkpsxiso\\mkpsxiso.exe -y config\\OverlayExample.xml"
+        },
+        //--------------------------------------------------
+        {
+            "label": "build",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": ["compile", "finalize"],
+            "command": "echo Build succeeded"
+        },
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": ["clean", "build"]
+        }
+    ],
+
+    "presentation": {
+        "showReuseMessage": false
+      }
+}

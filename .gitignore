@@ -1,0 +1,11 @@
+# For now we ignore what is in root
+/Auxiliary
+/Ressources
+
+**/.vscode/c_cpp_properties.json
+**/bin
+**/iso
+
+*.bin
+*.dep
+*.o
