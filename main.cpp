@@ -1,6 +1,7 @@
+#include "PlanschbeckenOverlay/Planschbecken.h"
 #include <stdio.h>
 
 int main()
 {
-    return printf("Schwimmflugel :3\n");
+    return printf(Planschbecken::text);
 }

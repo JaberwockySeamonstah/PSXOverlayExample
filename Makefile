@@ -4,6 +4,7 @@ TYPE      = ps-exe
 BUILD     = Release
 
 SRCS  = main.cpp
+SRCS += PlanschbeckenOverlay/Planschbecken.cpp
 SRCS += $(PSX_REDUX)/common/crt0/crt0.s 
 
 CPPFLAGS += -I$(PSX_REDUX)/psyq/include
