@@ -3,6 +3,9 @@ TARGET    = OverlayExample
 TYPE      = ps-exe
 BUILD     = Release
 
+LDSCRIPT       = overlay.ld
+OVERLAYSCETION = .ovly0
+
 SRCS  = main.cpp
 SRCS += PlanschbeckenOverlay/Planschbecken.cpp
 SRCS += $(PSX_REDUX)/common/crt0/crt0.s 
