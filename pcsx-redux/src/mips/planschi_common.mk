@@ -8,8 +8,8 @@ CXX = $(PREFIX)-gcc
 
 TYPE ?= cpe
 LDSCRIPT ?= $(ROOTDIR)/$(TYPE).ld
-ifneq ($(strip $(LDSCRIPT2)),)
-LDSCRIPT := $(addprefix $(LDSCRIPT2) , -T$(LDSCRIPT))
+ifneq ($(strip $(OVERLAYSCRIPT)),)
+LDSCRIPT := $(addprefix $(OVERLAYSCRIPT) , -T$(LDSCRIPT))
 else
 LDSCRIPT := $(addprefix $(ROOTDIR)/default.ld , -T$(LDSCRIPT))
 endif
