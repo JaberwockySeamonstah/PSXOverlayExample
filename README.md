@@ -7,7 +7,7 @@ Overlays allow you to write code, that is part of your application, but will not
 Overlays have a predefined address, where they are loaded too. Multiple overlays can have the same loading address, allowing to reduce the size of the main executable and providing a form of dynamic loading.
 
 ### Overlays in this example
-For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles make sure to strip them out of the final executable.
+For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles define which sections are part of the overlay - and therefor must be placed in there own files.
 
 The overlays occupy the same address, so you can never load them both at the same time. Therefor, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
 
@@ -33,11 +33,9 @@ This example is designed to use VSCode and the WSL system. However, the example 
     The converted files can be obtained [here](http://psx.arthus.net/sdk/Psy-Q/). Those files should be placed in the pcsx-redux folder under "pcsx-redux\src\mips\psyq\lib" for easier use
 
 ## Setup
-Copy the "pcsx-redux" folder of this repo to your pcsx-redux folder, this should replace *NO* file but add a new common makefile.
-
 1. Adjust Makefile
 
-    Make sure the "PSX_REDUX" value of the Makefile points to your "pcsx-redux" folder
+    Make sure the "PSCX_REDUX" value of the Makefile points to your "pcsx-redux" folder
 
 2. Adjust tasks.json *OPTIONAL*
 

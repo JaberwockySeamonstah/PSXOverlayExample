@@ -8,12 +8,12 @@
         {
             "label": "clean",
             "type": "shell",
-            "command": "wsl make clean"
+            "command": "wsl make clean BINDIR=bin/"
         },
         {
             "label": "compile",
             "type": "shell",
-            "command": "wsl make"
+            "command": "wsl make BINDIR=bin/"
         },
         {
             "label": "finalize",

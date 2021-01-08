@@ -3,8 +3,8 @@ TARGET      = OverlayExample
 TYPE        = ps-exe
 BUILD       = Release
 
-LDSCRIPT       = overlay.ld
-OVERLAYSECTION = .ovly0 .ovly1
+OVERLAYSCRIPT  ?= overlay.ld
+OVERLAYSECTION ?= .ovly0 .ovly1
 
 SRCS  = main.cpp
 SRCS += PlanschbeckenOverlay/Planschbecken.cpp
@@ -39,4 +39,4 @@ LDFLAGS += -ltap
 LDFLAGS += -lcd
 LDFLAGS += -Wl,--end-group
 
-include $(PCSX_REDUX)/planschi_common.mk
+include $(PCSX_REDUX)/common.mk
