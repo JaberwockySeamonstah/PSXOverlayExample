@@ -7,7 +7,9 @@
 
 extern "C" u_long __load_start_ovly0;
 
-#define NRUN_OVERLAY1
+// Comment out following line to change which overlay is used
+#define RUN_OVERLAY1
+
 #define USE_POINTER
 
 #ifdef RUN_OVERLAY1
@@ -19,7 +21,7 @@ static const char*const overlayFile = "\\PLANSCH.bin;1";
 #ifdef USE_POINTER
 
 #ifdef RUN_OVERLAY1
-#define str Schwimmfugel::text
+#define str Schwimmflugel::text
 #else
 #define str Planschbecken::text
 #endif
