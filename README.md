@@ -7,9 +7,12 @@ Overlays allow you to write code, that is part of your application, but will not
 Overlays have a predefined address, where they are loaded too. Multiple overlays can have the same loading address, allowing to reduce the size of the main executable and providing a form of dynamic loading.
 
 ### Overlays in this example
-For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles define which sections are part of the overlay - and therefor must be placed in there own files.
+For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles define which sections are part of the overlay - and therefor must be placed in their own files.
 
-The overlays occupy the same address, so you can never load them both at the same time. Therefor, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+The overlays occupy the same address, so you can never load them both at the same time. Therefore, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+
+To change which overlay is used, just comment out `#define RUN_OVERLAY1` at line 11.
+At runtime, a different message will appear in pcsx-redux's console, depending on which overlay was loaded.
 
 ## Requirements
 This example is designed to use VSCode and the WSL system. However, the example in general only relies on the GNU GCC for MIPS. 
@@ -47,6 +50,12 @@ This example is designed to use VSCode and the WSL system. However, the example 
 
 ## Build the example
 Running make should be enough
+
+### Building the iso image with mkpsxiso:
+
+```bash
+mkpsxiso config/OverlayExample.xml
+```
 
 ### With VSCode
 The tasks.json file provides a "build" and a "rebuild" task that should do the job

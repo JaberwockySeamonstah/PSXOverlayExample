@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<iso_project image_name="iso/OverlayExample.bin" cue_sheet="iso/OverlayExample.cue" no_xa="0">
+<iso_project image_name="OverlayExample.bin" cue_sheet="OverlayExample.cue" no_xa="0">
 	<track type="data">
 		<identifiers
 			system			= "PLAYSTATION"
@@ -10,12 +10,12 @@
 			data_preparer	= "MKPSXISO"
 			copyright		= "COPYLEFT"
 		/>
-		<license file="D:\PSX\psyq\cdgen\LCNSFILE\LICENSEE.DAT"/>
+		<license file="LICENSEE.DAT"/>
 		<directory_tree>
 			<file name="system.cnf"	  type="data"	source="config/OverlayExample.cnf"/>
-			<file name="SCES_003.90"  type="data"	source="bin/OverlayExample.ps-exe"/>
-			<file name="PLANSCH.bin"  type="data"   source="bin/Overlay.ovly0" />
-			<file name="SCHWIMM.bin"  type="data"   source="bin/Overlay.ovly1" />
+			<file name="SCES_003.90"  type="data"	source="OverlayExample.ps-exe"/>
+			<file name="PLANSCH.bin"  type="data"   source="Overlay.ovly0" />
+			<file name="SCHWIMM.bin"  type="data"   source="Overlay.ovly1" />
 			<dummy sectors="1024"/>	
 		</directory_tree>
 	</track>
