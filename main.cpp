@@ -5,7 +5,7 @@
 #include <libcd.h>
 #include <stdio.h>
 
-extern "C" u_long __load_start_ovly0;
+extern "C" u_long load_all_overlays_here;
 
 #define NRUN_OVERLAY1
 #define USE_POINTER
@@ -25,14 +25,14 @@ static const char*const overlayFile = "\\PLANSCH.bin;1";
 #endif
 
 #else
-#define str reinterpret_cast<char*>(&__load_start_ovly0)
+#define str reinterpret_cast<char*>(&load_all_overlays_here)
 #endif
 
 int main()
 {
 	CdInit();
 	
-	CdReadFile(const_cast<char*>(overlayFile), &__load_start_ovly0, 0);
+	CdReadFile(const_cast<char*>(overlayFile), &load_all_overlays_here, 0);
 	CdReadSync(0, nullptr);
 
 	printf(str);
