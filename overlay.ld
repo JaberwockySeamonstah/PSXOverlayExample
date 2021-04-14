@@ -1,10 +1,14 @@
 __heap_base = MAX(__ovly0_end, __ovly1_end);
 
-SECTIONS {			
+SECTIONS {		
 	OVERLAY __bss_end : NOCROSSREFS SUBALIGN(4)
 	{
-		.ovly0
+		.ovlyload
         {
+            load_all_overlays_here = .;
+        }
+		.ovly0
+        {			
 			KEEP(PlanschbeckenOverlay/*.o(.text))
 			__ovly0_ctor = .;
 			KEEP(PlanschbeckenOverlay/*.o(.text.startup._GLOBAL__*))
