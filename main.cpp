@@ -8,14 +8,14 @@
 extern "C" u_long load_all_overlays_here;
 
 // Comment out following line to change which overlay is used
-#define RUN_OVERLAY1
+//#define RUN_OVERLAY1
 
 #define USE_POINTER
 
 #ifdef RUN_OVERLAY1
-static const char*const overlayFile = "\\SCHWIMM.bin;1";
+static const char*const overlayFile = "\\SCHWIMM.BIN;1";
 #else
-static const char*const overlayFile = "\\PLANSCH.bin;1";
+static const char*const overlayFile = "\\PLANSCH.BIN;1";
 #endif
 
 #ifdef USE_POINTER
