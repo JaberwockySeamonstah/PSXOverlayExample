@@ -9,9 +9,11 @@ Overlays have a predefined address, where they are loaded too. Multiple overlays
 ### Overlays in this example
 For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles define which sections are part of the overlay - and therefor must be placed in their own files.
 
-The overlays occupy the same address, so you can never load them both at the same time. Therefore, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+The overlays are loaded at the same address, `&load_all_overlays_here` in this example, and occupy the same area in memory, so you can never load them both at the same time. 
 
-To change which overlay is used, just comment out `#define RUN_OVERLAY1` at line 11.
+Therefore, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+
+To change which overlay is used, just comment out `#define RUN_OVERLAY1` at line 11. 
 At runtime, a different message will appear in pcsx-redux's console, depending on which overlay was loaded.
 
 ## Requirements
