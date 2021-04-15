@@ -51,7 +51,7 @@ This example is designed to use VSCode and the WSL system. However, the example 
 
 ## Build the example
 
-  * Create `iso` and `bin` folders at the root of the project.
+  * Create the `iso` and `bin` folders at the root of the project.
 
   * Run `make`.
  
@@ -62,6 +62,8 @@ This example is designed to use VSCode and the WSL system. However, the example 
 ```bash
 mkpsxiso -y config/OverlayExample.xml
 ```
+The cue/bin will by default be generated in the `iso` folder.
 
 ### With VSCode
+
 The tasks.json file provides a "build" and a "rebuild" task that should do the job
