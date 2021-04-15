@@ -36,6 +36,7 @@ This example is designed to use VSCode and the WSL system. However, the example 
     The converted files can be obtained [here](http://psx.arthus.net/sdk/Psy-Q/). Those files should be placed in the pcsx-redux folder under "pcsx-redux\src\mips\psyq\lib" for easier use
 
 ## Setup
+
 1. Adjust Makefile
 
     Make sure the "PSCX_REDUX" value of the Makefile points to your "pcsx-redux" folder
@@ -46,15 +47,20 @@ This example is designed to use VSCode and the WSL system. However, the example 
 
 3. Adjust OverlayExample.xml *OPTIONAL*
 
-    Make sure the path to the license file in OverlayExample.xml under the config foulder is correct or remove this entry
+    Make sure the path to the license file in OverlayExample.xml under the config folder is correct or remove this entry.
 
 ## Build the example
-Running make should be enough
+
+  * Create `iso` and `bin` folders at the root of the project.
+
+  * Run `make`.
+ 
+  * Put the generated `.ps-exe`, `.ovly0` and `.ovly1` files in the `bin` folder.
 
 ### Building the iso image with mkpsxiso:
 
 ```bash
-mkpsxiso config/OverlayExample.xml
+mkpsxiso -y config/OverlayExample.xml
 ```
 
 ### With VSCode
