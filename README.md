@@ -9,9 +9,11 @@ Overlays have a predefined address, where they are loaded too. Multiple overlays
 ### Overlays in this example
 For this example, we have two overlays - there source files are located in "PlanschbeckenOverlay" and "SchwimmflugelOverlay" - the Overlay.ld describes which object files are part of which overlay, while the makefiles define which sections are part of the overlay - and therefor must be placed in their own files.
 
-The overlays occupy the same address, so you can never load them both at the same time. Therefore, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+The overlays are loaded at the same address, `&load_all_overlays_here` in this example, and occupy the same area in memory, so you can never load them both at the same time. 
 
-To change which overlay is used, just comment out `#define RUN_OVERLAY1` at line 11.
+Therefore, the main.cpp contains a macro to swap between the overlays. This is done in a static fashion for this example, but can easily be done at runtime as well.
+
+To change which overlay is used, just comment out `#define RUN_OVERLAY1` at line 11. 
 At runtime, a different message will appear in pcsx-redux's console, depending on which overlay was loaded.
 
 ## Requirements
@@ -36,6 +38,7 @@ This example is designed to use VSCode and the WSL system. However, the example 
     The converted files can be obtained [here](http://psx.arthus.net/sdk/Psy-Q/). Those files should be placed in the pcsx-redux folder under "pcsx-redux\src\mips\psyq\lib" for easier use
 
 ## Setup
+
 1. Adjust Makefile
 
     Make sure the "PSCX_REDUX" value of the Makefile points to your "pcsx-redux" folder
@@ -46,16 +49,23 @@ This example is designed to use VSCode and the WSL system. However, the example 
 
 3. Adjust OverlayExample.xml *OPTIONAL*
 
-    Make sure the path to the license file in OverlayExample.xml under the config foulder is correct or remove this entry
+    Make sure the path to the license file in OverlayExample.xml under the config folder is correct or remove this entry.
 
 ## Build the example
-Running make should be enough
+
+  * Create the `iso` and `bin` folders at the root of the project.
+
+  * Run `make`.
+ 
+  * Put the generated `.ps-exe`, `.ovly0` and `.ovly1` files in the `bin` folder.
 
 ### Building the iso image with mkpsxiso:
 
 ```bash
-mkpsxiso config/OverlayExample.xml
+mkpsxiso -y config/OverlayExample.xml
 ```
+The cue/bin will by default be generated in the `iso` folder.
 
 ### With VSCode
+
 The tasks.json file provides a "build" and a "rebuild" task that should do the job
